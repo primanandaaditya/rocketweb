@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="infix.imrankst1221.codecanyon">
+    
+    <!-- Always Required to get content and check if internet is available -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<!--    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+<!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+
+    
+    <!-- Required for Location get, If you app use location service then enable it. -->
+    <!--
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+    -->
+    
+    <!-- Required for camera, If you need camera then enable it. -->
+    <!--
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    -->
+    
+    <!-- Required for maps, if your need the map function then only enable it. -->
+    <!--
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    -->
+    
+    <!-- Required for visualizer & radio, if you need then only enable it. -->
+    <!--
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    -->
+    
+    <!-- Required for notifications & radio, if you need then only enable it. -->
+    <!--
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    -->
+    
+    <!-- Required for tumblr,  if you need then only enable it -->
+    <!--
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    -->
+    
+    <!-- Required for in-app purchases, if you need then only enable it. -->
+    <!--
+    <uses-permission android:name="com.android.vending.BILLING" />
+    -->
+    
+    <application
+        android:allowBackup="true"
+        android:configChanges="orientation|screenSize"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:hardwareAccelerated="false"
+        android:theme="@style/AppThemePrimary"
+        android:name=".setting.OnesignalMessagingService"
+        tools:ignore="GoogleAppIndexingWarning">
+    <activity
+            android:name=".MainActivity"
+            android:hardwareAccelerated="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:hardwareAccelerated="true"
+            android:label="@string/title_activity_splash" />
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:hardwareAccelerated="true"
+            android:label="@string/title_activity_home"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@style/AppThemePrimary" />
+    
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="android.webkit.WebView.EnableSafeBrowsing"
+            android:value="false" />
+        <meta-data
+            android:name="android.webkit.WebView.MetricsOptOut"
+            android:value="true" />
+    
+        <!-- Enable only if you are using Firebase -->
+        <!--
+        <service android:name=".setting.FirebaseMessagingService"
+            android:permission="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+        -->
+    
+        <!-- Enable only if you are using Google Ads -->
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true"/>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/admob_app_id"/>
+    
+        <!-- Enable only if you are using Onesignal -->
+        <!--
+        <meta-data
+            android:name="com.onesignal.NotificationOpened.DEFAULT"
+            android:value= "b2f7f966-d8cc-11e4-bed1-df8f05be55ba" />
+        <meta-data android:name="com.onesignal.NotificationAccentColor.DEFAULT"
+            android:value="@color/white" />
+        -->
+    </application>
+
+</manifest>
